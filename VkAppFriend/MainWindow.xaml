@@ -4,28 +4,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VkAppFriend"
+        xmlns:toolkitLayout="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Layout.Toolkit"
+        xmlns:toolkitInput="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"       
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls" 
-        ShowIconOnTitleBar="True"
-                      BorderThickness="0"
-                      GlowBrush="Black"
-                      ResizeMode="CanResizeWithGrip"
-                      WindowTransitionsEnabled="False"
-                      WindowStartupLocation="CenterScreen"
         Title="Друзья для приложений ВКонтакте" Height="600" Width="800">
-    <Controls:MetroWindow.Flyouts>
-        <Controls:FlyoutsControl>
-            <Controls:Flyout Header="Группы" Position="Left" Width="200" TitleVisibility="Visible" IsModal="True">
-                <ListBox>
-                    <ListBoxItem Content="123"/>
-                </ListBox>
-            </Controls:Flyout>
-        </Controls:FlyoutsControl>
-    </Controls:MetroWindow.Flyouts>
     <Grid>
-            <ListBox>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Path x:Name="LogoVK" Grid.Row="0" Grid.Column="0" Style="{StaticResource VKStyle}" Fill="#00AADE"/>
+        <toolkitLayout:Accordion Width="250" Grid.Column="0" Grid.Row="1">
+            <toolkitLayout:AccordionItem  Header="Настройки"/>
+            <toolkitLayout:AccordionItem Header="Группы">
+                
+            </toolkitLayout:AccordionItem>
+        </toolkitLayout:Accordion>
+            
+            <ListBox DockPanel.Dock="Right" Grid.Column="1" Grid.RowSpan="2">
                 <ListBoxItem Content="123456"/>
             </ListBox>
-            
     </Grid>
 </Controls:MetroWindow>
