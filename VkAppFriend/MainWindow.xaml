@@ -19,19 +19,24 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
-            <RowDefinition/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Path x:Name="LogoVK" Grid.Row="0" Grid.Column="0" Style="{StaticResource VKStyle}" Fill="#00AADE" Margin="0 8 0 8"/>
-        <tkLayout:Accordion Width="250" Grid.Column="0" Grid.Row="1">
-            <tkLayout:AccordionItem  Header="Настройки">
+        <tkLayout:Accordion Width="250" Grid.Column="0" Grid.Row="1" VerticalAlignment="Stretch">
+            <tkLayout:AccordionItem  Header="Настройки" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch">
                 <StackPanel Orientation="Vertical">
                     <Controls:ToggleSwitch Header="Создавать списки по играм"/>
-                    <Controls:ToggleSwitch Header="Связать друзей со списками"/>
-                    <Button Content="Отправить запросы" Margin="0 8"/>
+                    <Button Content="Связать друзей со списками" Margin="0 8"/>
                 </StackPanel>
             </tkLayout:AccordionItem>
-            <tkLayout:AccordionItem Header="Группы">
-                
+            <tkLayout:AccordionItem Header="Группы" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0">
+                <DockPanel>
+                    <TextBox Grid.Row="0" DockPanel.Dock="Top"/>
+                    <Button Content="Отправить заявки" Grid.Row="1" DockPanel.Dock="Top" Margin="0 8"/>
+                    <ListBox Grid.Row="2"  DockPanel.Dock="Right" Margin="0 8" VerticalAlignment="Stretch">
+                        
+                    </ListBox>
+                </DockPanel>
             </tkLayout:AccordionItem>
         </tkLayout:Accordion>
             
